@@ -1,0 +1,51 @@
+general {
+	output_format = "i3bar"
+	colors = true
+	interval = 1
+
+	markup = "pango"
+	separator = ""
+
+	color_good = "#b5ff2a"
+	color_degraded = "#ffb52a"
+	color_bad = "#ff2a2a"
+}
+
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery all"
+order += "cpu_usage"
+order += "memory"
+order += "tztime local"
+
+wireless _first_ {
+	format_up = "<span foreground='#ffb52a'>&#xF502;</span> %ip"
+	format_down = ""
+}
+
+ethernet _first_ {
+	format_up = "<span foreground='#ffb52a'>&#xF6FF;</span> %ip"
+	format_down = ""
+}
+
+battery all {
+	format = "<span foreground='#ffb52a'>%status</span> %percentage <span foreground='#aaaaaa'>(%remaining)</span>"
+	format_down = ""
+	status_chr = "&#xF583;"
+	status_bat = "&#xF581;"
+	status_unk = "&#xF590;"
+	status_full = "&#xF578;"
+}
+
+cpu_usage {
+	format = "<span foreground='#ffb52a'>&#xE760;</span> %usage"
+}
+
+memory {
+	format = "<span foreground='#ffb52a'>&#xF85A;</span> %percentage_used"
+}
+
+tztime local {
+	format = "<span foreground='#ffb52a'>&#xF017;</span> %time"
+	format_time = "%Y-%m-%d %H:%M:%S"
+}
