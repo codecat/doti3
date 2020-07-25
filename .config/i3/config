@@ -174,3 +174,6 @@ bar {
 
 # Take a screenshot
 bindsym --release $mod+Shift+s exec --no-startup-id "scrot '/tmp/screenshot.png' -p -s -f -e 'xclip -selection clipboard -target image/png -i $f'"
+
+# Lock screen
+bindsym --release Mod4+l exec --no-startup-id "i3lock --color=222222"
