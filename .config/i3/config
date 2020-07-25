@@ -171,3 +171,6 @@ bar {
 		urgent_workspace     #900000 #900000 #dddddd
 	}
 }
+
+# Take a screenshot
+bindsym --release $mod+Shift+s exec --no-startup-id "scrot '/tmp/screenshot.png' -p -s -f -e 'xclip -selection clipboard -target image/png -i $f'"
